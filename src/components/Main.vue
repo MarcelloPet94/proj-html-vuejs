@@ -6,8 +6,9 @@
     <div class="grid_news">
         <div class="sx_block">
             <div class="news_thumb box1">
+              <div class="thumb_onhover"></div>
               <div class="content_thumb">
-                argomento
+                <p>argomento</p>
               </div>
             </div>
             <div class="news_thumb box2">
@@ -78,6 +79,17 @@ export default {
     {
       position: relative;
 
+      .thumb_onhover
+      {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(237, 57, 21, 0.8);
+        border: 5px solid #010101;
+        z-index: 1;
+      }
+
       .content_thumb
       {
         position: absolute;
@@ -141,6 +153,12 @@ export default {
       }
     }
   }
+
+  .grid_news .news_thumb:hover .thumb_onhover
+    {
+      display: block;
+    }
+  
 }
 
 </style>
