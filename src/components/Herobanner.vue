@@ -1,6 +1,5 @@
 <template>
-  <div>
-  <div class="hero">
+  <section class="hero">
     
     <div class="general_bar">
       <div class="sx_content">
@@ -22,24 +21,34 @@
           </div>
         </div>  
     </div>
-
-  </div>
-  </div>
+    
+    <Strip
+    :testo="campo"
+    />
+  </section>
 </template>
 
 <script>
+import Strip from './partials/strip.vue' 
 
 export default {
   name: 'Herobanner',
+  components:{
+    Strip
+  },
+  data() {
+    return {
+      campo: "ciao"
+    }
+  }
+
 }
 </script>
 
 <style scoped lang="scss">
 .hero
 {
-  width: 100vw;
-  height: 100vh;
-  border: 1px solid red;
+  background-color: lightcoral;
 
   .general_bar
   {
@@ -66,10 +75,18 @@ export default {
     display: flex;
     justify-content: center;
     align-content: center;
-    position: relative;
-    top: 40%;
+    height: 90vh;
     text-align: center;
+    border: 1px solid blue;
 
+
+    .content 
+    {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid green;
+    }
   }
 }  
 </style>
