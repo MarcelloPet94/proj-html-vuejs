@@ -5,14 +5,38 @@
     />
     <div class="grid_news">
         <div class="sx_block">
-            <div class="news_sx box1">1</div>
-            <div class="news_sx box2">2</div>
-            <div class="news_sx box3">3</div>
-            <div class="news_sx box4">4</div>
+            <div class="news_thumb box1">
+              <div class="content_thumb">
+                argomento
+              </div>
+            </div>
+            <div class="news_thumb box2">
+              <div class="content_thumb">
+                argomento
+              </div>
+            </div>
+            <div class="news_thumb box3">
+              <div class="content_thumb">
+                argomento
+              </div>
+            </div>
+            <div class="news_thumb box4">
+              <div class="content_thumb">
+                argomento
+              </div>
+            </div>
         </div>
         <div class="dx_block">
-            <div class="news_sx box_dx1">1</div>
-            <div class="news_sx box_dx2">2</div>
+            <div class="news_thumb box_dx1">
+              <div class="content_thumb">
+                argomento
+              </div>              
+            </div>
+            <div class="news_thumb box_dx2">
+              <div class="content_thumb">
+                argomento
+              </div>              
+            </div>
         </div>
     </div>
   </section>
@@ -49,6 +73,22 @@ export default {
     width: 900px;
     height: auto;
     border: 4px solid yellow;
+
+    .news_thumb
+    {
+      position: relative;
+
+      .content_thumb
+      {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 90px;
+        padding: 8px;
+        background-color: darkblue;
+        color: #fff;
+      }
+    }
 
     .sx_block
     {
