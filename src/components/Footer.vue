@@ -26,9 +26,18 @@
       </div>
 
       <div class="info_footer_icon">
-        <a href="#" v-for="(icon , indice) in icons" :key="indice">
-          <img :src="icon.social"/>
+        <a href="#">
+          <i class="fab fa-facebook"></i>
+        </a>        
+        <a href="#">
+          <i class="fab fa-twitter"></i>
         </a>
+        <a href="#">
+          <i class="fab fa-instagram"></i>
+        </a>        
+        <a href="#">
+          <i class="fab fa-youtube"></i>
+        </a>        
       </div>
     </div>    
   </section>
@@ -37,26 +46,6 @@
 <script>
 export default {
   name: 'Footer',
-  data() {
-    return {
-      
-      icons: [
-        {
-           'social' :  'https://img.icons8.com/ios-glyphs/30/000000/facebook-f.png',
-        },
-        {
-           'social' :  'https://img.icons8.com/ios-glyphs/30/000000/twitter--v1.png',          
-        },
-        {
-           'social' :  'https://img.icons8.com/ios/30/000000/instagram-new--v1.png',
-        },
-        {
-           'social' :  'https://img.icons8.com/material/30/000000/youtube-play--v1.png',          
-        }        
-      ]
-
-    }
-  }
 }
 </script>
 
@@ -109,9 +98,9 @@ export default {
     {
       a
       {
-        width: 32px;
-        height: 32px;
-        background-color: #fff;        
+        margin: 0 8px;
+        padding: 8px;
+        background-color: #010101;        
         color: #fff;
 
       }
