@@ -1,9 +1,9 @@
 <template>
   <section class="ticket_live_date">
+    <div class="date_live">
     <Strip 
     :testo="infolive"
-    />
-    <div class="date_live">
+    />      
       <ul>
         <li class="show_info_ticket">
           <i class="fas fa-plus"></i><span>17/17</span>
@@ -17,23 +17,33 @@
               </div>  
             </div>
           </div>
-        </li>
+        </li>     
       </ul>
     </div>
-
+    <Stripaction
+    :calltoaction="infolive"
+    />  
   </section>
 </template>
 
 <script>
 import Strip from './partials/Strip.vue'
+import Stripaction from './partials/Stripaction.vue'
 
 export default {
-  components: { Strip },
+  components: {
+    Strip,
+    Stripaction
+  },
   name: 'Savedate',
+  props:{
+    calltoaction: String
+  },
   data() {
     return {
       infolive : "live date"
     }
+    
   }
 }
 </script>
@@ -42,8 +52,12 @@ export default {
 
 .ticket_live_date
 {
+  display: flex;
+  flex-direction: column;
+  column-gap: 200px;
+  justify-content: space-between;
   background-color: lightseagreen;
-  height: 400px;
+  height: 600px;
 
   .date_live
   {
@@ -73,7 +87,7 @@ export default {
 
           .map_location
           {
-            min-width: 200px;
+            min-width: 340px;
             height: 200px;
             margin-right: 16px;
             border: 1px solid #010101;
