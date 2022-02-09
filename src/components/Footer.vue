@@ -26,18 +26,11 @@
       </div>
 
       <div class="info_footer_icon">
-        <a href="#">
-          <i class="fab fa-facebook"></i>
-        </a>        
-        <a href="#">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#">
-          <i class="fab fa-instagram"></i>
-        </a>        
-        <a href="#">
-          <i class="fab fa-youtube"></i>
-        </a>        
+        <div v-for="(icon , indice) in icons" :key="indice">
+          <a :href="icon.url">
+            <i :class="icon.social"></i>
+          </a>
+        </div>
       </div>
     </div>    
   </section>
@@ -46,7 +39,17 @@
 <script>
 export default {
   name: 'Footer',
-}
+  data() {
+    return {
+      icons: [
+        {'social' : 'fab fa-facebook' , 'url' : "#"},
+        {'social' : 'fab fa-twitter' , 'url' : "#"},
+        {'social' : 'fab fa-instagram' , 'url' : "#"},
+        {'social' : 'fab fa-youtube' , 'url' : "#"}
+      ]
+    }
+  }
+}  
 </script>
 
 <style scoped lang="scss">
@@ -96,6 +99,7 @@ export default {
     }
     .info_footer_icon
     {
+      display: flex;
       a
       {
         margin: 0 8px;
