@@ -1,12 +1,24 @@
 <template>
   <section class="hero">
-    
+
+      <nav :class="{openNav : this.navState}" class="hover_menu_nav">
+        <div class="general_bar">
+          <div class="sx_content">
+            <img src="../assets/avada-music-logo-retina.png">
+          </div>
+
+          <div class="right_content" @click="burgerOpen">
+            <i class="fas fa-close"></i>
+          </div>
+        </div>      
+      </nav>
+
     <div class="general_bar">
       <div class="sx_content">
         <img src="../assets/avada-music-logo-retina.png">
       </div>
 
-      <div class="right_content">
+      <div class="right_content" @click="burgerOpen">
         <i class="fas fa-bars"></i>
       </div>
     </div>
@@ -22,24 +34,34 @@
         </div>  
     </div>
     
-    <Strip
+    <Stripseo
     :testo="campo"
     />
   </section>
 </template>
 
 <script>
-import Strip from './partials/Strip.vue' 
+import Stripseo from './partials/Stripseo.vue' 
 
 export default {
   name: 'Herobanner',
   components:{
-    Strip
+    Stripseo
   },
   data() {
     return {
+      navState : false,
       campo: "ciao"
     }
+  },
+    methods: {
+    
+    burgerOpen( )
+    {
+      this.navState = !this.navState
+      console.log('ok')
+    }
+
   }
 
 }
@@ -48,14 +70,29 @@ export default {
 <style scoped lang="scss">
 .hero
 {
+  position: relative;
   background-color: lightcoral;
+
+
+  .openNav {display: block !important;}
+
+  .hover_menu_nav
+  {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    background-color:lightcoral;
+
+  }
 
   .general_bar
   {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border: 1px solid #010101;
       padding: 24px;
 
       .sx_content
@@ -77,7 +114,6 @@ export default {
     align-content: center;
     height: 90vh;
     text-align: center;
-    border: 1px solid blue;
 
 
     .content 
@@ -85,8 +121,9 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border: 1px solid green;
     }
   }
 }  
+
+
 </style>

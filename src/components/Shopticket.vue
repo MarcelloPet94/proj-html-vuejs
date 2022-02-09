@@ -1,12 +1,12 @@
 <template>
   <section class="ticket_live_date">
     <div class="date_live">
-    <Strip 
+    <Stripseo 
     :testo="infolive"
     />      
       <ul>
         <li class="show_info_ticket">
-          <i class="fas fa-plus"></i><span>17/17</span>
+          <i class="fas fa-plus"></i><i class="fas fa-minus"></i><span>17/17</span>
           <div class="hide_show">
             <div class="info_date_live">
               <div class="map_location"></div>
@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import Strip from './partials/Strip.vue'
+import Stripseo from './partials/Stripseo.vue'
 import Stripaction from './partials/Stripaction.vue'
 
 export default {
   components: {
-    Strip,
+    Stripseo,
     Stripaction
   },
   name: 'Savedate',
@@ -76,7 +76,7 @@ export default {
         margin-left: 16px;
       }
 
-      .hide_show
+      .hide_show , .fa-minus
       {
       display: none;  
 
@@ -112,10 +112,16 @@ export default {
     }
   }
 
-  ul li.show_info_ticket:hover .hide_show
+  ul li.show_info_ticket:hover .hide_show , ul li.show_info_ticket:hover .fa-minus
   {
     display: block;
   }
+
+  ul li.show_info_ticket:hover .fa-plus
+  {
+    display: none;
+  }
+
 }
 
 </style>

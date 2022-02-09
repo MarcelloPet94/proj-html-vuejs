@@ -1,6 +1,6 @@
 <template>
   <section class="main">
-    <Strip
+    <Stripseo
     :testo="prova2"
     />
     <div class="grid_news">
@@ -53,13 +53,13 @@
 </template>
 
 <script>
-import Strip from './partials/Strip.vue'
+import Stripseo from './partials/Stripseo.vue'
 import Stripaction from './partials/Stripaction.vue'
 
 export default {
   name: 'Main',
   components: {
-    Strip,
+    Stripseo,
     Stripaction
   },
   data(){
