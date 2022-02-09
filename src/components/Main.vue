@@ -8,25 +8,25 @@
             <div class="news_thumb box1">
               <div class="thumb_onhover"><p>argomento</p></div>
               <div class="content_thumb">
-                <p>argomento</p>
+                <p>1</p>
               </div>
             </div>
             <div class="news_thumb box2">
               <div class="thumb_onhover"><p>argomento</p></div>           
               <div class="content_thumb">
-                argomento
+                2
               </div>
             </div>
             <div class="news_thumb box3">
               <div class="thumb_onhover"><p>argomento</p></div>              
               <div class="content_thumb">
-                argomento
+                3
               </div>
             </div>
             <div class="news_thumb box4">
               <div class="thumb_onhover"><p>argomento</p></div>              
               <div class="content_thumb">
-                argomento
+                4
               </div>
             </div>
         </div>
@@ -34,13 +34,13 @@
             <div class="news_thumb box_dx1">
               <div class="thumb_onhover"><p>argomento</p></div>              
               <div class="content_thumb">
-                argomento
+                5
               </div>              
             </div>
             <div class="news_thumb box_dx2">
               <div class="thumb_onhover"><p>argomento</p></div>              
               <div class="content_thumb">
-                argomento
+                6
               </div>              
             </div>
         </div>

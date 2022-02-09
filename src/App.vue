@@ -30,6 +30,6 @@ export default {
 
 <style lang="scss">
 
-@import './assets/global.scss';
+@import './assets/style/global.scss';
 
 </style>
