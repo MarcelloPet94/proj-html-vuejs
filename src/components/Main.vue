@@ -6,22 +6,25 @@
     <div class="grid_news">
         <div class="sx_block">
             <div class="news_thumb box1">
-              <div class="thumb_onhover"></div>
+              <div class="thumb_onhover"><p>argomento</p></div>
               <div class="content_thumb">
                 <p>argomento</p>
               </div>
             </div>
             <div class="news_thumb box2">
+              <div class="thumb_onhover"><p>argomento</p></div>           
               <div class="content_thumb">
                 argomento
               </div>
             </div>
             <div class="news_thumb box3">
+              <div class="thumb_onhover"><p>argomento</p></div>              
               <div class="content_thumb">
                 argomento
               </div>
             </div>
             <div class="news_thumb box4">
+              <div class="thumb_onhover"><p>argomento</p></div>              
               <div class="content_thumb">
                 argomento
               </div>
@@ -29,32 +32,40 @@
         </div>
         <div class="dx_block">
             <div class="news_thumb box_dx1">
+              <div class="thumb_onhover"><p>argomento</p></div>              
               <div class="content_thumb">
                 argomento
               </div>              
             </div>
             <div class="news_thumb box_dx2">
+              <div class="thumb_onhover"><p>argomento</p></div>              
               <div class="content_thumb">
                 argomento
               </div>              
             </div>
         </div>
     </div>
+    <Stripaction
+    :calltoaction="cta"
+    />  
   </section>
   
 </template>
 
 <script>
-import Strip from './partials/strip.vue'
+import Strip from './partials/Strip.vue'
+import Stripaction from './partials/Stripaction.vue'
 
 export default {
   name: 'Main',
   components: {
-    Strip
+    Strip,
+    Stripaction
   },
   data(){
     return{
-      prova2 : "direttamente da main"
+      prova2 : "direttamente da main",
+      cta : "call to action"
     }
   }
 }
@@ -64,7 +75,6 @@ export default {
 
 .main
 {
-  padding: 80px;
   background-color: lightblue;
 
   .grid_news{
@@ -88,6 +98,13 @@ export default {
         background-color: rgba(237, 57, 21, 0.8);
         border: 5px solid #010101;
         z-index: 1;
+
+        p
+        {
+          position: relative;
+          top: 50%;
+          text-align: center;
+        }
       }
 
       .content_thumb
@@ -154,11 +171,16 @@ export default {
     }
   }
 
-  .grid_news .news_thumb:hover .thumb_onhover
+  .grid_news .news_thumb:hover .thumb_onhover  
     {
       display: block;
+
     }
-  
+
+  .grid_news .news_thumb:hover .content_thumb
+    {
+      display: none;
+    }  
 }
 
 </style>

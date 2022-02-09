@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Strip from './partials/strip.vue' 
+import Strip from './partials/Strip.vue' 
 
 export default {
   name: 'Herobanner',
