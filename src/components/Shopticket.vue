@@ -1,12 +1,14 @@
 <template>
-  <section class="ticket_live_date">
+  <section class="ticket_live_date" id="livedate">
     <div class="date_live">
     <Stripseo 
     :testo="infolive"
     />      
       <ul>
         <li class="show_info_ticket">
-          <i class="fas fa-plus"></i><i class="fas fa-minus"></i><span>17/17</span>
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-minus"></i>
+            <span>17/17</span>
           <div class="hide_show">
             <div class="info_date_live">
               <div class="map_location"></div>
@@ -114,7 +116,7 @@ export default {
 
   ul li.show_info_ticket:hover .hide_show , ul li.show_info_ticket:hover .fa-minus
   {
-    display: block;
+    display: inline-block;
   }
 
   ul li.show_info_ticket:hover .fa-plus

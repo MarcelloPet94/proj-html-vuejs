@@ -10,7 +10,17 @@
           <div class="right_content" @click="burgerOpen">
             <i class="fas fa-close"></i>
           </div>
-        </div>      
+        </div>    
+
+        <div class="txt_content_block">
+            <div class="content">
+                <div v-for="(inner, index) in vocimenu" :key="index">
+                  <a :href="inner.href">
+                      {{inner.voce}}
+                  </a>
+                </div>
+            </div>  
+        </div>          
       </nav>
 
     <div class="general_bar">
@@ -25,11 +35,11 @@
 
     <div class="txt_content_block">
         <div class="content">
-          <h1>Titolo</h1>
-          <p>Lorem</p>
+          <h1>{{titolo}}</h1>
+          <p>{{paragrafo}}</p>
           <div class="cta">
-            <a href="#">LATEST</a>
-            <a href="#">LIVE DATES</a>
+            <a href="#">{{cta1}}</a>
+            <a href="#">{{cta2}}</a>
           </div>
         </div>  
     </div>
@@ -48,21 +58,53 @@ export default {
   components:{
     Stripseo
   },
+
+  props: {
+    titolo: String,
+    paragrafo: String,
+    cta1: String,
+    cta2: String,
+  },
+
   data() {
     return {
       navState : false,
-      campo: "ciao"
+      campo: "hey",
+      vocimenu: [
+        {
+          'voce': 'Home',
+          'href': '#'
+        },
+        {
+          'voce': 'Meet The Band',
+          'href': '#' 
+        },
+        {
+          'voce': 'Live Dates',
+          'href': '#livedate' 
+        },
+        {
+          'voce': 'Latest News',
+          'href': '#' 
+        },
+        {
+          'voce': 'Albums',
+          'href': '#' 
+        },
+        {
+          'voce': 'Fans',
+          'href': '#' 
+        }                                                                     
+      ]
     }
   },
-    methods: {
-    
-    burgerOpen( )
+
+  methods: {
+    burgerOpen()
     {
       this.navState = !this.navState
-      console.log('ok')
     }
-
-  }
+}
 
 }
 </script>
@@ -85,6 +127,13 @@ export default {
     min-height: 100vh;
     height: 100vh;
     background-color:lightcoral;
+    z-index: 2;
+
+    a
+    {
+      font-size: 42px;
+      line-height: 2em;
+    }
 
   }
 
@@ -103,6 +152,11 @@ export default {
           {
             width: 100%;
           }
+      }
+
+      .right_content
+      {
+        cursor: pointer;
       }
   }
 

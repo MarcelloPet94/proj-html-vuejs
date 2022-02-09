@@ -5,42 +5,23 @@
     />
     <div class="grid_news">
         <div class="sx_block">
-            <div class="news_thumb box1">
-              <div class="thumb_onhover"><p>argomento</p></div>
+            <div class="news_thumb" :class="see.alignState" v-for="(see) in news" :key="see.id">
+              <div class="thumb_onhover">
+                <p>{{see.titNews}}</p>
+                </div>
               <div class="content_thumb">
-                <p>1</p>
-              </div>
-            </div>
-            <div class="news_thumb box2">
-              <div class="thumb_onhover"><p>argomento</p></div>           
-              <div class="content_thumb">
-                2
-              </div>
-            </div>
-            <div class="news_thumb box3">
-              <div class="thumb_onhover"><p>argomento</p></div>              
-              <div class="content_thumb">
-                3
-              </div>
-            </div>
-            <div class="news_thumb box4">
-              <div class="thumb_onhover"><p>argomento</p></div>              
-              <div class="content_thumb">
-                4
+                <p>{{see.titNews}}</p>
+                <p>{{see.titPar}}</p>
               </div>
             </div>
         </div>
         <div class="dx_block">
-            <div class="news_thumb box_dx1">
-              <div class="thumb_onhover"><p>argomento</p></div>              
+            <div class="news_thumb" :class="dx.alignState" v-for="dx in newsDx" :key="dx.id">
+              <img class="img_cont" src="../assets/blog-post3-400x600.jpg" alt="">
+              <div class="thumb_onhover"><p>{{dx.titNews}}</p></div>              
               <div class="content_thumb">
-                5
-              </div>              
-            </div>
-            <div class="news_thumb box_dx2">
-              <div class="thumb_onhover"><p>argomento</p></div>              
-              <div class="content_thumb">
-                6
+                <p>{{dx.titNews}}</p>
+                <p>{{dx.titPar}}</p>
               </div>              
             </div>
         </div>
@@ -55,6 +36,8 @@
 <script>
 import Stripseo from './partials/Stripseo.vue'
 import Stripaction from './partials/Stripaction.vue'
+import dataNews from '../pageData/news.js'
+import newsDx from '../pageData/newsDx.js'
 
 export default {
   name: 'Main',
@@ -65,7 +48,9 @@ export default {
   data(){
     return{
       prova2 : "direttamente da main",
-      cta : "call to action"
+      cta : "ciao",
+      news: dataNews,
+      newsDx: newsDx
     }
   }
 }
@@ -88,7 +73,14 @@ export default {
     .news_thumb
     {
       position: relative;
+      overflow: hidden;
 
+      .img_cont
+      {
+        position: absolute;
+        top: 0;
+        width: 120%;
+      }
 
       .thumb_onhover
       {
@@ -113,8 +105,7 @@ export default {
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 90px;
-        padding: 8px;
+        padding: 16px;
         background-color: darkblue;
         color: #fff;
       }
