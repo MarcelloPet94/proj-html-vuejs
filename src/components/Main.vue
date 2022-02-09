@@ -81,13 +81,14 @@ export default {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: 900px;
+    width: 800px;
     height: auto;
     border: 4px solid yellow;
 
     .news_thumb
     {
       position: relative;
+
 
       .thumb_onhover
       {
