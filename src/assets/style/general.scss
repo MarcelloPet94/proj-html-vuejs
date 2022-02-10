@@ -1,0 +1,70 @@
+
+
+.heroText
+{
+    font-size: $extra;
+    color: $white;
+    font-weight: $maxweight;
+
+}
+
+.emotionalText
+{
+    font-size: $m;
+    color: $white;
+    font-weight: $midweight;
+    font-family: serif;
+    font-style: italic;
+    padding: 24px;
+}
+
+.standardText
+{
+    font-size: $xl;
+    font-weight: $maxweight;
+}
+
+.standarParagraph
+{
+    font-size: $m;
+    color: $bombay;
+    font-family: serif;
+}
+
+.navhover
+{
+    font-size: $xxl;
+    line-height: 2em;
+    color: $white;
+    opacity: 0.3;
+}
+
+.cta
+{
+    padding: 24px;
+}
+
+.cta_first
+{
+    background-color: $mandyvibrant;
+    font-size: $m;
+    color: $white;
+    text-transform: uppercase;
+    padding: 16px;
+    margin: 16px;
+    margin: 8px;
+}
+
+.cta_base
+{
+    font-size: $m;
+    color: $white;
+    border: 1px solid $white;
+    text-transform: uppercase;
+    padding: 16px;
+    margin: 16px;
+    margin: 8px;
+}
+
+.iconW { color: $white; }  
+.iconB { color: $charade; }

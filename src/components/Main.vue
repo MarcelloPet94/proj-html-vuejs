@@ -60,10 +60,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/style/variable.scss';
 
 .main
 {
-  background-color: lightblue;
+  background-color: $charade;
 
   .grid_news{
     display: flex;
@@ -118,7 +119,7 @@ export default {
     {
       display: grid;
       grid-gap: 16px;
-      width: calc(70% - 16px);
+      width: calc(68% - 16px);
       height: 100%;
       border: 1px solid #010101;
 
@@ -148,7 +149,7 @@ export default {
     {
       display: grid;;
       grid-gap: 16px;      
-      width: 30%;
+      width: 32%;
       height: 100%;
       border: 1px solid #010101;
 

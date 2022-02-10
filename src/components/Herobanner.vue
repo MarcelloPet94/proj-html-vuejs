@@ -8,41 +8,42 @@
           </div>
 
           <div class="right_content" @click="burgerOpen">
-            <i class="fas fa-close"></i>
+            <i class="fas fa-close" style="color:#fefefe"></i>
           </div>
         </div>    
 
         <div class="txt_content_block">
             <div class="content">
                 <div v-for="(inner, index) in vocimenu" :key="index">
-                  <a :href="inner.href">
+                  <a class="navhover" :href="inner.href">
                       {{inner.voce}}
                   </a>
                 </div>
             </div>  
         </div>          
       </nav>
+    <div class="bg">
+      <div class="general_bar">
+        <div class="sx_content">
+          <img src="../assets/avada-music-logo-retina.png">
+        </div>
 
-    <div class="general_bar">
-      <div class="sx_content">
-        <img src="../assets/avada-music-logo-retina.png">
+        <div class="right_content" @click="burgerOpen">
+          <i class="fas fa-bars" style="color:#fefefe;"></i>
+        </div>
       </div>
 
-      <div class="right_content" @click="burgerOpen">
-        <i class="fas fa-bars"></i>
+      <div class="txt_content_block">
+          <div class="content">
+            <h1 class="heroText">{{titolo}}</h1>
+            <p class="emotionalText">{{paragrafo}}</p>
+            <div class="cta">
+              <a class="cta_first" href="#">{{cta1}}</a>
+              <a class="cta_base" href="#">{{cta2}}</a>
+            </div>
+          </div>  
       </div>
-    </div>
-
-    <div class="txt_content_block">
-        <div class="content">
-          <h1>{{titolo}}</h1>
-          <p>{{paragrafo}}</p>
-          <div class="cta">
-            <a href="#">{{cta1}}</a>
-            <a href="#">{{cta2}}</a>
-          </div>
-        </div>  
-    </div>
+    </div>  
     
     <Stripseo
     :testo="campo"
@@ -112,10 +113,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/style/variable.scss';
+@import '../assets/style/general.scss';
+
 .hero
 {
   position: relative;
-  background-color: lightcoral;
+  background-color: $midgray;
 
 
   .openNav {display: block !important;}
@@ -128,15 +132,20 @@ export default {
     width: 100%;
     min-height: 100vh;
     height: 100vh;
-    background-color:lightcoral;
+    background-color: $mandy;
     z-index: 2;
 
-    a
+    .navhover:hover
     {
-      font-size: 42px;
-      line-height: 2em;
+      opacity: 1;
     }
-
+  }
+  
+  .bg
+  {
+      background-image: url(../assets/home_slider.jpg);
+      background-position: center center;
+      background-size: 100%;
   }
 
   .general_bar
@@ -177,6 +186,13 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      .cta_base:hover
+      {
+        color: $charade;
+        border: 1px solid $charade;
+        background-color: $white;
+      }
     }
   }
 }  
