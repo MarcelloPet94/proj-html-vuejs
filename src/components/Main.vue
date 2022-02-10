@@ -7,6 +7,7 @@
     <div class="grid_news">
         <div class="sx_block">
             <div class="news_thumb" :class="see.alignState" v-for="see in news" :key="see.id">
+              <img class="img_cont" :src="see.media" alt="">              
               <div class="thumb_onhover">
                 <p>{{see.titNews}}</p>
                 </div>
