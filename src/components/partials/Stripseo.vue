@@ -1,6 +1,7 @@
 <template>
 <div class="strip">
-    <h1>{{testo}}</h1>
+    <h2>{{testo}}</h2>
+    <p>{{paragrafo}}</p>
 </div>
 </template>
 
@@ -9,7 +10,8 @@
 export default {
   name: 'App',
   props:{
-      testo : String
+      testo : String,
+      paragrafo: String
   }
 }
 </script>

@@ -5,7 +5,7 @@ const dataHero = [
         "cta1" : "latest album",
         "cta2" : "lvie dates",
         "voci" : "menu"
-    }
+    },
 ] 
 
 export default dataHero

@@ -1,11 +1,12 @@
 <template>
   <section class="main">
     <Stripseo
-    :testo="prova2"
+    :testo="tNews"
+    :paragrafo="paragrafoNews"
     />
     <div class="grid_news">
         <div class="sx_block">
-            <div class="news_thumb" :class="see.alignState" v-for="(see) in news" :key="see.id">
+            <div class="news_thumb" :class="see.alignState" v-for="see in news" :key="see.id">
               <div class="thumb_onhover">
                 <p>{{see.titNews}}</p>
                 </div>
@@ -17,7 +18,7 @@
         </div>
         <div class="dx_block">
             <div class="news_thumb" :class="dx.alignState" v-for="dx in newsDx" :key="dx.id">
-              <img class="img_cont" src="../assets/blog-post3-400x600.jpg" alt="">
+              <img class="img_cont" :src="dx.media" alt="">
               <div class="thumb_onhover"><p>{{dx.titNews}}</p></div>              
               <div class="content_thumb">
                 <p>{{dx.titNews}}</p>
@@ -47,8 +48,9 @@ export default {
   },
   data(){
     return{
-      prova2 : "direttamente da main",
-      cta : "ciao",
+      tNews : "Latest Band News",
+      paragrafoNews: "lorem",
+      cta : "view all latest news",
       news: dataNews,
       newsDx: newsDx
     }
@@ -79,7 +81,7 @@ export default {
       {
         position: absolute;
         top: 0;
-        width: 120%;
+        width: 113%;
       }
 
       .thumb_onhover

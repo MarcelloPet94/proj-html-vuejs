@@ -5,12 +5,12 @@
     :paragrafo="innerCont.paragrafo"
     :cta1="innerCont.cta1"
     :cta2="innerCont.cta2"
-
     />
     <Main/>
     <Videosection/>
-    <Shopticket/>
+    <Shopticket />
     <Footer/>
+  
   </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
   },
   data () {
     return {
-      dataheropage: dataHero
+      dataheropage: dataHero,
     }
   }
 }

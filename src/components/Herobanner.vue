@@ -46,6 +46,7 @@
     
     <Stripseo
     :testo="campo"
+    :paragrafo = "parInfo"
     />
   </section>
 </template>
@@ -69,7 +70,8 @@ export default {
   data() {
     return {
       navState : false,
-      campo: "hey",
+      campo: "Music is Life",
+      parInfo: "Music is Life",
       vocimenu: [
         {
           'voce': 'Home',

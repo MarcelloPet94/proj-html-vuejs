@@ -2,26 +2,29 @@
   <section class="ticket_live_date" id="livedate">
     <div class="date_live">
     <Stripseo 
-    :testo="infolive"
-    />      
-      <ul>
-        <li class="show_info_ticket">
-            <i class="fas fa-plus"></i>
-            <i class="fas fa-minus"></i>
-            <span>17/17</span>
-          <div class="hide_show">
-            <div class="info_date_live">
-              <div class="map_location"></div>
-              <div class="shop_ticket">
-                <h3>Location</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis autem eaque optio, voluptates, dolor natus et molestiae quo nobis perferendis, similique nihil eligendi at placeat! Rem laborum magnam consectetur tempora?</p>
-                <a href="#">Book now</a>
-              </div>  
+    :testo="dNews"
+    :paragrafo="paragrafoData"
+    />    
+        <ul v-for="info  in dataticket" :key="info.id">
+          <li class="show_info_ticket">
+            <div>
+              <i class="fas fa-plus"></i>
+              <i class="fas fa-minus"></i>
+              <span>{{info.date}} {{info.location}}</span>
             </div>
-          </div>
-        </li>     
-      </ul>
-    </div>
+            <div class="hide_show">
+              <div class="info_date_live">
+                <div class="map_location"></div>
+                <div class="shop_ticket">
+                  <h3>{{info.title}}</h3>
+                  <p>{{info.more}}</p>
+                  <a href="#">{{info.cta}}</a>
+                </div>  
+              </div>
+            </div>
+          </li>     
+        </ul>
+      </div>
     <Stripaction
     :calltoaction="infolive"
     />  
@@ -31,6 +34,7 @@
 <script>
 import Stripseo from './partials/Stripseo.vue'
 import Stripaction from './partials/Stripaction.vue'
+import allTicket from '../pageData/ticket.js'
 
 export default {
   components: {
@@ -43,7 +47,10 @@ export default {
   },
   data() {
     return {
-      infolive : "live date"
+      dNews : "Live Dates",
+      paragrafoData : "lorem",  
+      infolive : "View all live dates",
+      dataticket: allTicket      
     }
     
   }
@@ -59,12 +66,11 @@ export default {
   column-gap: 200px;
   justify-content: space-between;
   background-color: lightseagreen;
-  height: 600px;
 
   .date_live
   {
     margin: 0 auto;
-    width: 800px;
+    width: 800px; 
 
     ul li.show_info_ticket
     { 
@@ -103,7 +109,7 @@ export default {
             
             a
             {
-              width: 20%;
+              width: 100px;
               text-align: center;
               line-height: 32px;
               background-color: red;
