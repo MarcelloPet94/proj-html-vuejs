@@ -7,21 +7,23 @@
     />    
         <ul v-for="info  in dataticket" :key="info.id">
           <li class="show_info_ticket">
-            <div>
+            <div @click="isOpen = !isOpen">
               <i class="fas fa-plus" style="font-size:9px; color:#fff"></i>
               <i class="fas fa-minus" style="font-size:9px; color:#fff"></i>
               <span class="titleNews">{{info.date}} {{info.location}}</span>
             </div>
-            <div class="hide_show">
-              <div class="info_date_live">
-                <div class="map_location"></div>
-                <div class="shop_ticket">
-                  <h3 class="neutralParagraph">{{info.title}}</h3>
-                  <p class="standarParagraph">{{info.more}}</p>
-                  <a class="m_cta_first" href="#">{{info.cta}}</a>
-                </div>  
+            <CollapseTransition>
+              <div class="hide_show" v-show="isOpen">
+                <div class="info_date_live">
+                  <div class="map_location"></div>
+                  <div class="shop_ticket">
+                    <h3 class="neutralParagraph">{{info.title}}</h3>
+                    <p class="standarParagraph">{{info.more}}</p>
+                    <a class="m_cta_first" href="#">{{info.cta}}</a>
+                  </div>  
+                </div>
               </div>
-            </div>
+            </CollapseTransition>  
           </li>     
         </ul>
       </div>
@@ -35,9 +37,11 @@
 import Stripseo from './partials/Stripseo.vue'
 import Stripaction from './partials/Stripaction.vue'
 import allTicket from '../pageData/ticket.js'
+ import { CollapseTransition } from "@ivanv/vue-collapse-transition"
 
 export default {
   components: {
+    CollapseTransition,
     Stripseo,
     Stripaction
   },
@@ -47,6 +51,7 @@ export default {
   },
   data() {
     return {
+      isOpen: false,
       dNews : "Live Dates",
       paragrafoData : "lorem",  
       infolive : "View all live dates",
