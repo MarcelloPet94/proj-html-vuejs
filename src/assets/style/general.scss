@@ -39,6 +39,27 @@
     opacity: 0.3;
 }
 
+.paragraphHoverNews
+{
+    font-size: $m;
+    color: $white;
+    line-height: 2em;
+}
+
+.titleNews
+{
+    font-size: $m;
+    color: $mandy;
+    line-height: 2em;    
+}
+
+.parNews
+{
+    font-size: $m;
+    color: $midgray;
+    line-height: 1em;    
+}
+
 .cta
 {
     padding: 24px;

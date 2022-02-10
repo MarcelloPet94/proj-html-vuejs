@@ -9,21 +9,21 @@
             <div class="news_thumb" :class="see.alignState" v-for="see in news" :key="see.id">
               <img class="img_cont" :src="see.media" alt="">              
               <div class="thumb_onhover">
-                <p>{{see.titNews}}</p>
+                <p class="paragraphHoverNews">{{see.titNews}}</p>
                 </div>
               <div class="content_thumb">
-                <p>{{see.titNews}}</p>
-                <p>{{see.titPar}}</p>
+                <p class="titleNews">{{see.titNews}}</p>
+                <p class="parNews">{{see.titPar}}</p>
               </div>
             </div>
         </div>
         <div class="dx_block">
             <div class="news_thumb" :class="dx.alignState" v-for="dx in newsDx" :key="dx.id">
               <img class="img_cont" :src="dx.media" alt="">
-              <div class="thumb_onhover"><p>{{dx.titNews}}</p></div>              
+              <div class="thumb_onhover"><p class="paragraphHoverNews">{{dx.titNews}}</p></div>              
               <div class="content_thumb">
-                <p>{{dx.titNews}}</p>
-                <p>{{dx.titPar}}</p>
+                <p class="titleNews">{{dx.titNews}}</p>
+                <p class="parNews">{{dx.titPar}}</p>
               </div>              
             </div>
         </div>
@@ -72,7 +72,7 @@ export default {
     margin: 0 auto;
     width: 800px;
     height: auto;
-    border: 4px solid yellow;
+    margin-bottom: 80px;
 
     .news_thumb
     {
@@ -92,8 +92,7 @@ export default {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba(237, 57, 21, 0.8);
-        border: 5px solid #010101;
+        background-color: rgba(235 , 75 , 93 , 0.8);
         z-index: 1;
 
         p
@@ -110,7 +109,7 @@ export default {
         bottom: 0;
         width: 100%;
         padding: 16px;
-        background-color: darkblue;
+        background-color: #323844;
         color: #fff;
       }
     }
@@ -121,25 +120,21 @@ export default {
       grid-gap: 16px;
       width: calc(68% - 16px);
       height: 100%;
-      border: 1px solid #010101;
 
       .box1
       {
         grid-column: 1 /span 2;
         height: 184px;
-        background-color: lightgreen;
       }
 
       .box2, .box3
       {
-        background-color: yellow;
         height: 416px;
       }
 
       .box4
       {
         grid-column: 1 /span 2;
-        background-color: orange;
         height: 184px;
       }
 
@@ -151,17 +146,14 @@ export default {
       grid-gap: 16px;      
       width: 32%;
       height: 100%;
-      border: 1px solid #010101;
 
       .box_dx1
       {
-        background-color: lightsalmon;
         height: 400px;
       }
       
       .box_dx2
       {
-        background-color: lightsalmon;        
         height: 400px;
       }
     }
