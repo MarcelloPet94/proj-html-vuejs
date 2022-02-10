@@ -8,17 +8,17 @@
         <ul v-for="info  in dataticket" :key="info.id">
           <li class="show_info_ticket">
             <div>
-              <i class="fas fa-plus"></i>
-              <i class="fas fa-minus"></i>
-              <span>{{info.date}} {{info.location}}</span>
+              <i class="fas fa-plus" style="font-size:9px; color:#fff"></i>
+              <i class="fas fa-minus" style="font-size:9px; color:#fff"></i>
+              <span class="titleNews">{{info.date}} {{info.location}}</span>
             </div>
             <div class="hide_show">
               <div class="info_date_live">
                 <div class="map_location"></div>
                 <div class="shop_ticket">
-                  <h3>{{info.title}}</h3>
-                  <p>{{info.more}}</p>
-                  <a href="#">{{info.cta}}</a>
+                  <h3 class="neutralParagraph">{{info.title}}</h3>
+                  <p class="standarParagraph">{{info.more}}</p>
+                  <a class="m_cta_first" href="#">{{info.cta}}</a>
                 </div>  
               </div>
             </div>
@@ -58,6 +58,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/style/variable.scss';
 
 .ticket_live_date
 {
@@ -65,19 +66,21 @@ export default {
   flex-direction: column;
   column-gap: 200px;
   justify-content: space-between;
-  background-color: lightseagreen;
+  background-color: $charade;
 
   .date_live
   {
     margin: 0 auto;
     width: 800px; 
+    margin-bottom: 80px;
 
     ul li.show_info_ticket
     { 
-      cursor: pointer;      
+      cursor: pointer;    
+      margin: 8px 0;  
       padding: 16px;
       list-style-type: none;
-      border: 1px solid #fff;
+      background-color: #323844;
 
       span 
       {
@@ -86,7 +89,9 @@ export default {
 
       .hide_show , .fa-minus
       {
-      display: none;  
+      display: none; 
+
+      transition: opacity 0.5s; 
 
         .info_date_live
         {
@@ -99,22 +104,18 @@ export default {
             height: 200px;
             margin-right: 16px;
             border: 1px solid #010101;
-          }
-
-          .shop_ticket
+          } 
+          
+          .shop_ticket 
           {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            
-            a
+            justify-content: space-between;            
+            p
             {
-              width: 100px;
-              text-align: center;
-              line-height: 32px;
-              background-color: red;
-            }             
-          }     
+              margin-bottom: 24px;
+            } 
+          }   
         }
       }   
     }
@@ -123,6 +124,7 @@ export default {
   ul li.show_info_ticket:hover .hide_show , ul li.show_info_ticket:hover .fa-minus
   {
     display: inline-block;
+    opacity: 1;
   }
 
   ul li.show_info_ticket:hover .fa-plus

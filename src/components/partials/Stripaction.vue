@@ -1,6 +1,6 @@
 <template>
 <div class="view_more">
-    <h1>{{calltoaction}}</h1>
+    <p class="stripCta">{{calltoaction}}</p>
 </div>
 </template>
 
@@ -15,12 +15,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/style/variable.scss';
+@import '../../assets/style/general.scss';
 
 .view_more
 {
-    background-color: red;
+    background-color: $mandy;
     text-align: center;
-    padding: 32px;
+    padding: 42px;
+    text-transform: uppercase;
 }
 
 </style>

@@ -10,7 +10,8 @@
 
 .emotionalText
 {
-    font-size: $m;
+    font-size: $l;
+    line-height: 1.5em;
     color: $white;
     font-weight: $midweight;
     font-family: serif;
@@ -24,9 +25,16 @@
     font-weight: $maxweight;
 }
 
+.neutralParagraph
+{
+    font-size: $m;
+    color: $white;   
+}
+
 .standarParagraph
 {
     font-size: $m;
+    line-height: 1.5em;
     color: $bombay;
     font-family: serif;
 }
@@ -50,14 +58,14 @@
 {
     font-size: $m;
     color: $mandy;
-    line-height: 2em;    
+    line-height: 1.4em;    
 }
 
 .parNews
 {
     font-size: $m;
     color: $midgray;
-    line-height: 1em;    
+    line-height: 2em;    
 }
 
 .cta
@@ -71,9 +79,20 @@
     font-size: $m;
     color: $white;
     text-transform: uppercase;
-    padding: 16px;
-    margin: 16px;
+    padding: 16px 32px;
     margin: 8px;
+    border-radius: 2px;
+}
+
+.m_cta_first
+{
+    background-color: $mandyvibrant;
+    font-size: $s;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    width: 25%;
+    padding: 8px;
 }
 
 .cta_base
@@ -82,10 +101,13 @@
     color: $white;
     border: 1px solid $white;
     text-transform: uppercase;
-    padding: 16px;
+    padding: 16px 32px;
     margin: 16px;
     margin: 8px;
 }
 
-.iconW { color: $white; }  
-.iconB { color: $charade; }
+.stripCta
+{
+    font-size: $s;
+    color: $white;
+}

@@ -2,9 +2,9 @@
   <div class="video_section">
     <img src="" alt="">
     <div class="content_text_video">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores eum assumenda officiis eaque? Obcaecati,
+    <p class="emotionalText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores eum assumenda officiis eaque? Obcaecati,
       ipsa ut quae pariatur ea cumque maiores ab. Molestias natus veritatis optio asperiores,
-      a inventore necessitatibus.</h3>
+      a inventore necessitatibus.</p>
     </div>  
     <div class="play_button">
       <img src="../assets/band_interview_play_icon.png" alt="play">
@@ -25,7 +25,6 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 3px solid purple;
   height: 700px;
   background-image: url(../assets/home-testimonial-parallax.jpg);
   background-attachment: fixed;
