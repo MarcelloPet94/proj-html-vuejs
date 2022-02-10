@@ -119,7 +119,7 @@ export default {
 .hero
 {
   position: relative;
-  background-color: $midgray;
+  background-color: #323844;
 
 
   .openNav {display: block !important;}
@@ -144,6 +144,7 @@ export default {
   .bg
   {
       background-image: url(../assets/home_slider.jpg);
+      background-repeat: no-repeat;
       background-position: center center;
       background-size: 100%;
   }

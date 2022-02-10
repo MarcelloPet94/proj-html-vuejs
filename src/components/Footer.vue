@@ -1,32 +1,32 @@
 <template>
   <section class="footer">
-    <div class="general_bar">
+    <div class="general_bar summary">
       <div class="sx_content">
         <img src="../assets/avada-music-logo-retina.png">
       </div>
 
       <div class="info_footer_content">
         <ul>
-          <li v-for="(showthis , indice) in vocimenu" :key="indice"><a :href="showthis.href">{{showthis.voce}}</a></li>
+          <li v-for="(showthis , indice) in vocimenu" :key="indice"><a class="smallParagraph" :href="showthis.href">{{showthis.voce}}</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="general_bar">
+    <div class="general_bar legacy">
       <div class="sx_content">
       <div class="info_footer_content">
         <ul>
           <li>
-            <a href="#">@copyright&nbsp;2021&nbsp;-&nbsp;2020</a>
+            <a class="extrasmallParagraph" href="#">@copyright&nbsp;2021&nbsp;-&nbsp;2020</a>
           </li>
           <li>
-            <a href="#">AVADA&nbsp;THEME&nbsp;BY&nbsp;THEMEFUSION</a>
+            <a class="extrasmallParagraph" href="#">AVADA&nbsp;THEME&nbsp;BY&nbsp;THEMEFUSION</a>
           </li>
           <li>
-            <a href="#">ALL&nbsp;RIGHT&nbsp;RESERVED</a>
+            <a class="extrasmallParagraph" href="#">ALL&nbsp;RIGHT&nbsp;RESERVED</a>
           </li>
           <li>
-            <a href="#">POWERED&nbsp;BY&nbsp;WORDPRESS</a>
+            <a class="extrasmallParagraph" href="#">POWERED&nbsp;BY&nbsp;WORDPRESS</a>
           </li>                                        
         </ul>
       </div>
@@ -87,28 +87,27 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/style/variable.scss';
 
 .footer  
-  {
-  background-color: darkblue;  
+  { 
 
   .general_bar
     {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border: 1px solid #010101;
-        padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px;     
 
-        .sx_content
-        {
-            width: 200px;
+      .sx_content
+      {
+          width: 200px;
 
-            img
-            {
-              width: 100%;
-            }
-        }
+          img
+          {
+            width: 100%;
+          }
+      }
     }
     
     .info_footer_content
@@ -123,12 +122,17 @@ export default {
         {
           list-style-type: none;
 
+
           a
           {
-            font-size: 12px;
-            color: #fff;
             padding: 16px;
+
           }
+        }
+
+        li a:hover
+        {
+          color: $white;
         }
       }
     }
@@ -137,12 +141,23 @@ export default {
       display: flex;
       a
       {
-        margin: 0 8px;
+        margin: 0 4px;
         padding: 8px;
-        background-color: #010101;        
-        color: #fff;
+        background-color: #323844;        
+        color: $midgray;
+        border-radius: 5px;
 
       }
     }  
+  }
+
+  .summary
+  {
+    background-color: #323844;    
+  }  
+  
+  .legacy
+  {
+    background-color: $charade;
   }
 </style>
